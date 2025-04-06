@@ -1,0 +1,62 @@
+﻿<Window x:Class="Keddy_Rest_Reminder.MessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keddy_Rest_Reminder"
+        mc:Ignorable="d" Height="250
+        " Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/images/cat.png">
+    <Window.Resources>
+        <!-- Butonlar için Genel Stil Tanımlaması (Varsayılan) -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#00DDDDDD"/>
+            <Setter Property="Foreground" Value="#FFE9E9E9"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#33D4D4D4"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- CloseBtn için özel Hover Efekti Tanımlaması -->
+        <Style x:Key="CloseButtonStyle" TargetType="Button" BasedOn="{StaticResource CustomButtonStyle}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                    <!-- Kırmızı hover rengi -->
+                    <Setter Property="Foreground" Value="White"/>
+                    <!-- Yazı rengi beyaz -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Canvas Background="#FF0E0E0E">
+        <Canvas x:Name="Toolbar" Width="500" Height="30" Background="#FF161616" VerticalAlignment="Top" MouseLeftButtonDown="Toolbar_MouseLeftButtonDown">
+            <!-- CloseBtn için özel stil uygula -->
+            <Button x:Name="OkBtn" Content="TAMAM" Canvas.Left="450" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OkBtn_Click" Visibility="Hidden"/>
+            <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
+            <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
+            <Button x:Name="YesBtn" Content="EVET" Canvas.Left="400" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="YesBtn_Click"/>
+            <Button x:Name="NoBtn" Content="HAYIR" Canvas.Left="450" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="NoBtn_Click"/>
+        </Canvas>
+        <Grid Height="220" Width="500" HorizontalAlignment="Center" Canvas.Top="30" VerticalAlignment="Center">
+            <Label x:Name="MessageLabel" Content="Message" Canvas.Left="222" Canvas.Top="137" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            <Image HorizontalAlignment="Center" Height="75" Margin="0,145,0,0" VerticalAlignment="Top" Width="76" Source="/images/cat.png"/>
+        </Grid>
+    </Canvas>
+</Window>

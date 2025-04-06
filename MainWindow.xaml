@@ -1,0 +1,76 @@
+﻿<Window x:Class="Keddy_Rest_Reminder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Keddy Rest Reminder" Height="350" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/images/cat.png" Closing="Window_Closing">
+    <Window.Resources>
+        <!-- Butonlar için Genel Stil Tanımlaması (Varsayılan) -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#00DDDDDD"/>
+            <Setter Property="Foreground" Value="#FFE9E9E9"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#33D4D4D4"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- CloseBtn için özel Hover Efekti Tanımlaması -->
+        <Style x:Key="CloseButtonStyle" TargetType="Button" BasedOn="{StaticResource CustomButtonStyle}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                    <!-- Kırmızı hover rengi -->
+                    <Setter Property="Foreground" Value="White"/>
+                    <!-- Yazı rengi beyaz -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Canvas Background="#FF0E0E0E">
+        <Canvas x:Name="Toolbar" Width="500" Height="30" Background="#FF161616" VerticalAlignment="Top" MouseLeftButtonDown="Toolbar_MouseLeftButtonDown">
+            <!-- CloseBtn için özel stil uygula -->
+            <Button x:Name="CloseBtn" Content="X" Canvas.Left="470" Width="30" Height="30" Style="{StaticResource CloseButtonStyle}" Click="CloseBtn_Click"/>
+            <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
+            <Button x:Name="MinimizeBtn" Content="–" Canvas.Left="435" Width="30" Height="30" Style="{StaticResource CustomButtonStyle}" Click="MinimizeBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="DurationComboBox" Canvas.Left="380" Canvas.Top="3" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" SelectedIndex="0" SelectionChanged="DurationComboBox_SelectionChanged"/>
+            <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
+        </Canvas>
+        <Label x:Name="TimeLabel" Content="00:00" Canvas.Left="138" Canvas.Top="35" Foreground="#FFE9E9E9" FontSize="90" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="StartBtn" Canvas.Left="225" Canvas.Top="165" Height="50" Width="50" Style="{StaticResource CustomButtonStyle}" Click="StartBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/images/Play.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="PauseResumeBtn" Canvas.Left="192" Canvas.Top="165" Height="50" Width="50" Style="{StaticResource CustomButtonStyle}" Click="PauseResumeBtn_Click" Visibility="Hidden">
+            <Button.Background>
+                <ImageBrush ImageSource="/images/PauseResume.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ResetBtn" Canvas.Left="256" Canvas.Top="165" Height="50" Width="50" Style="{StaticResource CustomButtonStyle}" Click="ResetBtn_Click" Visibility="Hidden">
+            <Button.Background>
+                <ImageBrush ImageSource="/images/Reset.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SettingsBtn" Width="25" Height="25" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="35" Canvas.Left="5" Click="SettingsBtn_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/images/Settings.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="DailyDurationLabel" Content="Bugün Toplam 0 sa 0 dk" Canvas.Left="171" Canvas.Top="311" Foreground="#FFE9E9E9" FontSize="14"/>
+    </Canvas>
+</Window>
