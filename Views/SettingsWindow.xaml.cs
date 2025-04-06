@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Keddy_Rest_Reminder.Core;
 
 namespace Keddy_Rest_Reminder
 {

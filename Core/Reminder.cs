@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Threading;
 
-namespace Keddy_Rest_Reminder
+namespace Keddy_Rest_Reminder.Core
 {
     internal class Reminder
     {

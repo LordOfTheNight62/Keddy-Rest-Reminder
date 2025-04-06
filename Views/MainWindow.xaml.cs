@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Keddy_Rest_Reminder.Core;
 
 namespace Keddy_Rest_Reminder
 {

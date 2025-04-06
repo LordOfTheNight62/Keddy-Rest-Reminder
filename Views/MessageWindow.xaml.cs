@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Keddy_Rest_Reminder.Core;
 
 namespace Keddy_Rest_Reminder
 {

@@ -1,4 +1,4 @@
-﻿namespace Keddy_Rest_Reminder
+﻿namespace Keddy_Rest_Reminder.Core
 {
     public enum MessageWindowState
     {
