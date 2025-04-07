@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
 using Keddy_Rest_Reminder.Core;
 
 namespace Keddy_Rest_Reminder
@@ -14,11 +13,6 @@ namespace Keddy_Rest_Reminder
     {
         private List<string>? durations;
         private Reminder reminder;
-
-        private double offset = 0;
-        private readonly double speed = 0.002; // Dalga akış hızı
-
-        private DispatcherTimer animationTimer;
 
         public MainWindow()
         {
@@ -45,33 +39,6 @@ namespace Keddy_Rest_Reminder
 
         #endregion
 
-        #region RainbowAnimation
-        private void StartWaveAnimation()
-        {
-            animationTimer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromMilliseconds(16) // 60 FPS
-            };
-            animationTimer.Tick += AnimateRainbow;
-            animationTimer.Start();
-        }
-
-        private void AnimateRainbow(object sender, EventArgs e)
-        {
-            offset += speed;
-            if (offset >= 1) offset = 0; // Sonsuz döngü için
-
-            // Renk dalgasını düzgün akıt
-            Stop1.Offset = (offset + 0.0) % 1;
-            Stop2.Offset = (offset + 0.2) % 1;
-            Stop3.Offset = (offset + 0.4) % 1;
-            Stop4.Offset = (offset + 0.6) % 1;
-            Stop5.Offset = (offset + 0.8) % 1;
-            Stop6.Offset = (offset + 1.0) % 1;
-        }
-
-        #endregion
-
         private void App()
         {
             AppSettings.Load();
@@ -86,7 +53,6 @@ namespace Keddy_Rest_Reminder
             WindowTitle.Content = $"{this.Title} - {DurationComboBox.SelectedItem} dakika";
             SyncComponentSettings();
             UpdateUI();
-            StartWaveAnimation();
         }
 
         private void SyncComponentSettings()
@@ -96,7 +62,7 @@ namespace Keddy_Rest_Reminder
 
         private void SyncUserData()
         {
-            DailyDurationLabel.Content = $"Bugün Toplam {UserData.DailyDuration / 60 / 60} sa {UserData.DailyDuration / 60} dk";
+            DailyDurationLabel.Content = $"Bugün Toplam {UserData.DailyDuration / 60 / 60} sa {(UserData.DailyDuration / 60) % 60} dk";
         }
 
         private void UpdateUI()

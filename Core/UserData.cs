@@ -28,6 +28,7 @@
                 Save(0);
                 Properties.Settings.Default.DailyDurationDate = DateTime.Today;
                 DailyDurationDate = DateTime.Today;
+                Save();
             }
         }
     }

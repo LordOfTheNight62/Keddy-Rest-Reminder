@@ -48,10 +48,10 @@
     <Canvas Background="#FF0E0E0E" Margin="0,0,10,0" Width="400">
         <Canvas x:Name="Toolbar" Width="400" Height="30" Background="#FF161616" VerticalAlignment="Top" MouseLeftButtonDown="Toolbar_MouseLeftButtonDown">
             <!-- CloseBtn için özel stil uygula -->
-            <Button x:Name="CloseBtn" Content="TAMAM" Canvas.Left="350" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CloseBtn_Click"/>
+            <Button x:Name="CloseBtn" Content="TAMAM" Canvas.Left="345" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CloseBtn_Click"/>
             <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
             <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
-            <Button x:Name="ResetBtn" Content="SIFIRLA" Canvas.Left="295" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ResetBtn_Click"/>
+            <Button x:Name="ResetBtn" Content="SIFIRLA" Canvas.Left="290" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ResetBtn_Click"/>
         </Canvas>
         <Grid Height="420" Width="400" HorizontalAlignment="Center" Canvas.Top="30" VerticalAlignment="Top">
             <Label Content="version 2025.4.7" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9"/>

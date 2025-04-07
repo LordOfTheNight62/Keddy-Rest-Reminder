@@ -48,7 +48,7 @@
     <Canvas Background="#FF0E0E0E">
         <Canvas x:Name="Toolbar" Width="500" Height="30" Background="#FF161616" VerticalAlignment="Top" MouseLeftButtonDown="Toolbar_MouseLeftButtonDown">
             <!-- CloseBtn için özel stil uygula -->
-            <Button x:Name="OkBtn" Content="TAMAM" Canvas.Left="450" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OkBtn_Click" Visibility="Hidden"/>
+            <Button x:Name="OkBtn" Content="TAMAM" Canvas.Left="445" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OkBtn_Click" Visibility="Hidden"/>
             <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
             <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
             <Button x:Name="YesBtn" Content="EVET" Canvas.Left="400" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="YesBtn_Click"/>
