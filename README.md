@@ -1,5 +1,13 @@
 # Keddy Rest Reminder
 
+## 😺 Download
+
+<a href="https://github.com/LordOfTheNight62/Keddy-Rest-Reminder/releases/download/v2025.4.7/Keddy.Rest.Reminder.Installer.zip" height="30">
+
+👉 Download Installer (v2025.4.7) (GitHub)
+
+</a>
+
 ## Screenshots
 
 <div align="center">
