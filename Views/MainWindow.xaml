@@ -39,6 +39,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
     </Window.Resources>
 
     <Canvas Background="#FF0E0E0E">
@@ -50,6 +51,21 @@
             <ComboBox x:Name="DurationComboBox" Canvas.Left="380" Canvas.Top="3" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" SelectedIndex="0" SelectionChanged="DurationComboBox_SelectionChanged"/>
             <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
         </Canvas>
+
+        <Border x:Name="RainbowBorder" Canvas.Top="30" Width="500" Height="5" HorizontalAlignment="Stretch">
+            <Border.Background>
+                <LinearGradientBrush x:Name="RainbowBrush" StartPoint="0,0.5" EndPoint="1,0.5" MappingMode="RelativeToBoundingBox">
+                    <GradientStop x:Name="Stop1" Color="Red" Offset="0"/>
+                    <GradientStop x:Name="Stop2" Color="Orange" Offset="0.17"/>
+                    <GradientStop x:Name="Stop3" Color="Yellow" Offset="0.34"/>
+                    <GradientStop x:Name="Stop4" Color="Green" Offset="0.51"/>
+                    <GradientStop x:Name="Stop5" Color="Blue" Offset="0.68"/>
+                    <GradientStop x:Name="Stop6" Color="Purple" Offset="0.85"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+
         <Label x:Name="TimeLabel" Content="00:00" Canvas.Left="138" Canvas.Top="35" Foreground="#FFE9E9E9" FontSize="90" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Button x:Name="StartBtn" Canvas.Left="225" Canvas.Top="165" Height="50" Width="50" Style="{StaticResource CustomButtonStyle}" Click="StartBtn_Click">
             <Button.Background>
@@ -66,7 +82,7 @@
                 <ImageBrush ImageSource="/images/Reset.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="SettingsBtn" Width="25" Height="25" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="35" Canvas.Left="5" Click="SettingsBtn_Click">
+        <Button x:Name="SettingsBtn" Width="25" Height="25" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="40" Canvas.Left="5" Click="SettingsBtn_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/images/Settings.png"/>
             </Button.Background>

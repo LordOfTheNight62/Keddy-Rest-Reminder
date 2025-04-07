@@ -54,7 +54,7 @@
             <Button x:Name="ResetBtn" Content="SIFIRLA" Canvas.Left="295" Width="50" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ResetBtn_Click"/>
         </Canvas>
         <Grid Height="420" Width="400" HorizontalAlignment="Center" Canvas.Top="30" VerticalAlignment="Top">
-            <Label Content="version 2025.4.6" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9"/>
+            <Label Content="version 2025.4.7" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9"/>
             <ComboBox x:Name="DurationComboBox" FontSize="14" SelectedIndex="0" Margin="114,10,236,385"/>
             <Label Content="Varsayılan Süre" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9" FontSize="14"/>
         </Grid>
