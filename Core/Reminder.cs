@@ -17,7 +17,6 @@ namespace Keddy_Rest_Reminder.Core
             }
         }
         private int StartingDuration { get; set; }
-        public int LastDuration { get; private set; }
         public bool Completed { get; private set; }
         public bool Active { get; private set; }
         public bool Paused { get; set; }
