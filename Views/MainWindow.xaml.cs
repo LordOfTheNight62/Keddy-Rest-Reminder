@@ -50,7 +50,7 @@ namespace Keddy_Rest_Reminder
             reminder.Duration = Convert.ToInt32(DurationComboBox.SelectedItem) * 60;
             reminder.CallBacks += UpdateUI;
 
-            WindowTitle.Content = $"{this.Title} - {DurationComboBox.SelectedItem} dakika";
+            WindowTitle.Content = $"{this.Title} - {DurationComboBox.SelectedItem} Minutes";
             SyncComponentSettings();
             UpdateUI();
         }
@@ -62,7 +62,7 @@ namespace Keddy_Rest_Reminder
 
         private void SyncUserData()
         {
-            DailyDurationLabel.Content = $"Bugün Toplam {UserData.DailyDuration / 60 / 60} sa {(UserData.DailyDuration / 60) % 60} dk";
+            DailyDurationLabel.Content = $"Today Total {UserData.DailyDuration / 60 / 60} hr {(UserData.DailyDuration / 60) % 60} min";
         }
 
         private void UpdateUI()
@@ -95,7 +95,7 @@ namespace Keddy_Rest_Reminder
 
         private void DurationComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            WindowTitle.Content = $"{this.Title} - {DurationComboBox.SelectedItem} dakika";
+            WindowTitle.Content = $"{this.Title} - {DurationComboBox.SelectedItem} Minutes";
             if (reminder is not null)
             {
                 reminder.Duration = Convert.ToInt32(DurationComboBox.SelectedItem) * 60;
@@ -137,7 +137,7 @@ namespace Keddy_Rest_Reminder
         {
             if (reminder.Active)
             {
-                MessageWindow messageWindow = new MessageWindow("Uygulamayı kapatmak istiyor musunuz?", "Şu an sayacınız aktif, kapatırsanız sayaç sıfırlanacak.", MessageWindowState.YesNo);
+                MessageWindow messageWindow = new MessageWindow("Do you want to close the application?", "Your timer is currently active; if you close it, the timer will reset.", MessageWindowState.YesNo);
                 messageWindow.ShowDialog();
 
                 if (messageWindow.Result.HasValue && !messageWindow.Result.Value)

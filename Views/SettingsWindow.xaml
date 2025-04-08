@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Keddy_Rest_Reminder"
         mc:Ignorable="d"
-        Title="Ayarlar" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Settings" Height="450" Width="400" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!-- Butonlar için Genel Stil Tanımlaması (Varsayılan) -->
         <Style x:Key="CustomButtonStyle" TargetType="Button">
@@ -48,15 +48,15 @@
     <Canvas Background="#FF0E0E0E" Margin="0,0,10,0" Width="400">
         <Canvas x:Name="Toolbar" Width="400" Height="30" Background="#FF161616" VerticalAlignment="Top" MouseLeftButtonDown="Toolbar_MouseLeftButtonDown">
             <!-- CloseBtn için özel stil uygula -->
-            <Button x:Name="CloseBtn" Content="TAMAM" Canvas.Left="345" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CloseBtn_Click"/>
+            <Button x:Name="CloseBtn" Content="OK" Canvas.Left="345" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CloseBtn_Click"/>
             <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
             <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
-            <Button x:Name="ResetBtn" Content="SIFIRLA" Canvas.Left="290" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ResetBtn_Click"/>
+            <Button x:Name="ResetBtn" Content="RESET" Canvas.Left="290" Width="55" Height="30" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ResetBtn_Click"/>
         </Canvas>
         <Grid Height="420" Width="400" HorizontalAlignment="Center" Canvas.Top="30" VerticalAlignment="Top">
-            <Label Content="version 2025.4.7" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9"/>
-            <ComboBox x:Name="DurationComboBox" FontSize="14" SelectedIndex="0" Margin="114,10,236,385"/>
-            <Label Content="Varsayılan Süre" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9" FontSize="14"/>
+            <Label Content="version 2025.4.8" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9"/>
+            <ComboBox x:Name="DurationComboBox" FontSize="14" SelectedIndex="0" Margin="133,10,217,385"/>
+            <Label Content="Default Duration" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" Foreground="#FFE9E9E9" FontSize="14"/>
         </Grid>
     </Canvas>
 </Window>

@@ -63,7 +63,7 @@ namespace Keddy_Rest_Reminder.Core
                 Completed = true;
                 Stop();
                 UserData.Save(UserData.DailyDuration + StartingDuration);
-                MessageWindow messageWindow = new MessageWindow("Mola Vakti", "Süreniz bitti, biraz mola vermeye ne dersiniz?", MessageWindowState.OK);
+                MessageWindow messageWindow = new MessageWindow("Break Time", "Your time is up, how about taking a break?", MessageWindowState.OK);
                 messageWindow.ShowDialog();
             }
             CallBacks?.Invoke();

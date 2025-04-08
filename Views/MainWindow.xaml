@@ -47,7 +47,7 @@
             <!-- CloseBtn için özel stil uygula -->
             <Button x:Name="CloseBtn" Content="X" Canvas.Left="470" Width="30" Height="30" Style="{StaticResource CloseButtonStyle}" Click="CloseBtn_Click"/>
             <Label x:Name="WindowTitle" Content="Title" Canvas.Top="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFE9E9E9" Canvas.Left="31"/>
-            <Button x:Name="MinimizeBtn" Content="–" Canvas.Left="435" Width="30" Height="30" Style="{StaticResource CustomButtonStyle}" Click="MinimizeBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="MinimizeBtn" Content="–" Canvas.Left="440" Width="30" Height="30" Style="{StaticResource CustomButtonStyle}" Click="MinimizeBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <ComboBox x:Name="DurationComboBox" Canvas.Left="380" Canvas.Top="3" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" SelectedIndex="0" SelectionChanged="DurationComboBox_SelectionChanged"/>
             <Image Height="25" Canvas.Left="3" Width="25" Canvas.Top="3" Source="/images/cat.png"/>
         </Canvas>
