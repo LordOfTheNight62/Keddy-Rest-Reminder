@@ -4,7 +4,7 @@
 
 <a href="https://github.com/LordOfTheNight62/Keddy-Rest-Reminder/releases/download/v2025.4.8/Keddy.Rest.Reminder.Installer.zip" height="30">
 
-👉 Download Installer (v2025.4.8) (GitHub) (Windows 64-bit)
+👉 Download Installer (v2025.4.8 & Windows 64-bit) (GitHub Link)
 
 </a>
 
